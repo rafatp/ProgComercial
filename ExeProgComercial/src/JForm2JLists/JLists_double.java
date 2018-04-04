@@ -11,6 +11,7 @@ import javax.swing.JOptionPane;
 /**
  *
  * @author rafaelpereira
+ * Dois Jlists
  */
 public class JLists_double extends javax.swing.JFrame {
 
