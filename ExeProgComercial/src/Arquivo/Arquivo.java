@@ -5,7 +5,7 @@
  */
 package Arquivo;
 
-import com.sun.xml.internal.ws.api.ha.StickyFeature;
+//import com.sun.xml.internal.ws.api.ha.StickyFeature;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
