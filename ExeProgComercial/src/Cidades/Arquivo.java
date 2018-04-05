@@ -21,7 +21,7 @@ public class Arquivo {
 
     public Arquivo(String nomeArquivo) {
         this.nomeArquivo = nomeArquivo;
-        this.arq = new File(this.nomeArquivo + ".txt");
+        this.arq = new File("/Users/rafaelpereira/NetBeansProjects/MyParentClass/src/Cidades/arqCidades/"+this.nomeArquivo+ ".txt");
     }
 
     public void gravar(String texto, boolean novo) {

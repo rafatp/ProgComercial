@@ -55,7 +55,7 @@ public class JFrameCidades extends javax.swing.JFrame {
 
         jScrollPane1.setViewportView(jListCidades);
 
-        jComboBoxEstado.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "\"Acre (AC)\"", "\"Alagoas (AL)\"", "\"Amapá (AP)\"", " \"Amazonas (AM)\"", " \"Bahia (BA)\"", "\"Ceará (CE)\" ", "\"Distrito Federal (DF)\" ", "\"Espírito Santo (ES)\" ", "\"Goiás (GO)\"", "\"Maranhão (MA)\" ", "\"Mato Grosso (MT)\" ", "\"Mato Grosso do Sul (MS)\" ", "\"Minas Gerais (MG)\"", "\"Pará (PA) \" ", "\"Paraíba (PB)\"", "\"Paraná (PR)\"", "\"Pernambuco (PE)\"", "\"Piauí (PI)\"", "\"Rio de Janeiro (RJ)\"", " \"Rio Grande do Norte (RN)\" ", "\"Rio Grande do Sul (RS)\" ", "\"Rondônia (RO)\"", "\"Roraima (RR)\"", "\"Santa Catarina (SC)\" ", "\"São Paulo (SP)\"", "\"Sergipe (SE)\"", "\"Tocantins (TO)\" " }));
+        jComboBoxEstado.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Acre (AC)", "Alagoas (AL)", "Amapá (AP)", "Amazonas (AM)", "Bahia (BA)", "Ceará (CE)", "Distrito Federal (DF) ", "Espírito Santo (ES) ", "Goiás (GO)", "Maranhão (MA)", "Mato Grosso (MT)", "Mato Grosso do Sul (MS) ", "Minas Gerais (MG)", "Pará (PA)", "Paraíba (PB)", "Paraná (PR)", "Pernambuco (PE)", "Piauí (PI)", "Rio de Janeiro (RJ)", "Rio Grande do Norte (RN) ", "Rio Grande do Sul (RS) ", "Rondônia (RO)", "Roraima (RR)", "Santa Catarina (SC) ", "São Paulo (SP)", "Sergipe (SE)", "Tocantins (TO)" }));
         jComboBoxEstado.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBoxEstadoActionPerformed(evt);
@@ -118,10 +118,9 @@ public class JFrameCidades extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jButtonClean, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(jButtonSave, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButtonDelete, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButtonAdd, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addComponent(jButtonSave, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButtonDelete, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButtonAdd, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
