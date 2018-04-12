@@ -18,13 +18,15 @@ public class JLists_double extends javax.swing.JFrame {
     /**
      * Creates new form JLists_double
      */
+    DefaultListModel lstEsq = new DefaultListModel();
+    DefaultListModel lstDir = new DefaultListModel();
+    
     public JLists_double() {
         initComponents();
         jListEsq.setModel(lstEsq);
         jListDir.setModel(lstDir);
     }
-    DefaultListModel lstEsq = new DefaultListModel();
-    DefaultListModel lstDir = new DefaultListModel();
+   
     
     /**
      * This method is called from within the constructor to initialize the form.
@@ -40,7 +42,7 @@ public class JLists_double extends javax.swing.JFrame {
         jScrollPane2 = new javax.swing.JScrollPane();
         jListDir = new javax.swing.JList<>();
         jButtonEsqDir = new javax.swing.JButton();
-        EsqDir = new javax.swing.JButton();
+        jButtonDirEsq = new javax.swing.JButton();
         jTextField1 = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
@@ -62,10 +64,10 @@ public class JLists_double extends javax.swing.JFrame {
             }
         });
 
-        EsqDir.setText("<<");
-        EsqDir.addActionListener(new java.awt.event.ActionListener() {
+        jButtonDirEsq.setText("<<");
+        jButtonDirEsq.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                EsqDirActionPerformed(evt);
+                jButtonDirEsqActionPerformed(evt);
             }
         });
 
@@ -114,7 +116,7 @@ public class JLists_double extends javax.swing.JFrame {
                                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(EsqDir)
+                                    .addComponent(jButtonDirEsq)
                                     .addComponent(jButtonEsqDir))))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -144,7 +146,7 @@ public class JLists_double extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jButtonEsqDir)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(EsqDir))
+                        .addComponent(jButtonDirEsq))
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -163,8 +165,12 @@ public class JLists_double extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Selecione um item", "Double ListBox", JOptionPane.PLAIN_MESSAGE);
         }
         else
-        {
-            lstDir.addElement(jListEsq.getSelectedValue());
+        { 
+            if(lstDir.contains(jListEsq.getSelectedValue().toString()))
+            {
+                JOptionPane.showMessageDialog(this, "Elemento repetido", "Double ListBox", JOptionPane.WARNING_MESSAGE);
+            }
+            else lstDir.addElement(jListEsq.getSelectedValue());
         }
         
     }//GEN-LAST:event_jButtonEsqDirActionPerformed
@@ -173,12 +179,15 @@ public class JLists_double extends javax.swing.JFrame {
         // TODO add your handling code here:
         if(!jTextField1.getText().equals(""))
         {
-            jListEsq.setModel(lstEsq);
+          
             lstEsq.addElement(jTextField1.getText());
+            jTextField1.setText("");
+            jTextField1.requestFocus();
+             
         }
         else
         {
-            JOptionPane.showMessageDialog(this, "Informe o Item", "Double ListBox", JOptionPane.PLAIN_MESSAGE);
+            JOptionPane.showMessageDialog(this, "Informe o Item", "Double ListBox", JOptionPane.WARNING_MESSAGE);
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -186,26 +195,34 @@ public class JLists_double extends javax.swing.JFrame {
         // TODO add your handling code here:
         if(!jTextField2.getText().equals(""))
         {
-            jListDir.setModel(lstDir);
+         
             lstDir.addElement(jTextField2.getText());
+             jTextField2.setText("");
+            
         }
         else
         {
-            JOptionPane.showMessageDialog(this, "Informe o Item", "Double ListBox", JOptionPane.PLAIN_MESSAGE);
+            JOptionPane.showMessageDialog(this, "Informe o Item", "Double ListBox", JOptionPane.WARNING_MESSAGE);
         }
     }//GEN-LAST:event_jButton2ActionPerformed
 
-    private void EsqDirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EsqDirActionPerformed
+    private void jButtonDirEsqActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonDirEsqActionPerformed
         // TODO add your handling code here:
+        int indice;
+        String item;
           if(jListDir.isSelectionEmpty())
         {
-            JOptionPane.showMessageDialog(this, "Selecione um item", "Double ListBox", JOptionPane.PLAIN_MESSAGE);
+            JOptionPane.showMessageDialog(this, "Selecione um item", "Double ListBox", JOptionPane.WARNING_MESSAGE);
         }
         else
         {
-            lstEsq.addElement(jListDir.getSelectedValue());
+           if(lstEsq.contains(jListDir.getSelectedValue().toString()))
+            {
+                JOptionPane.showMessageDialog(this, "Elemento repetido", "Double ListBox", JOptionPane.WARNING_MESSAGE);
+            }
+            else lstEsq.addElement(jListDir.getSelectedValue());
         }
-    }//GEN-LAST:event_EsqDirActionPerformed
+    }//GEN-LAST:event_jButtonDirEsqActionPerformed
 
     private void jButtonLimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonLimparActionPerformed
         // TODO add your handling code here:
@@ -254,9 +271,9 @@ public class JLists_double extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton EsqDir;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButtonDirEsq;
     private javax.swing.JButton jButtonEsqDir;
     private javax.swing.JButton jButtonLimpar;
     private javax.swing.JLabel jLabel1;
